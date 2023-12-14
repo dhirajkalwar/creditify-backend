@@ -15,6 +15,7 @@ app.use(cors({
 }));
 app.use((req, res, next) => {
     res.header('Access-Control-Expose-Headers', 'jwtoken');
+    res.setHeader('Access-Control-Allow-Origin', '*')
     next();
   });
 app.use(cookieParser());
