@@ -5,6 +5,7 @@ const Admin = require("../models/AdminSchema");
 const jwt = require('jsonwebtoken');
 const authenticate = async (req, res, next) => {
     try {
+        res.setHeader('Access-Control-Allow-Origin', 'https://creditify.vercel.app');
         const token = req.headers['jwtoken'];
         console.log(token);
         if (!token) {
